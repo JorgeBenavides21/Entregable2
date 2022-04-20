@@ -248,10 +248,10 @@ class Persona {
     Detalle (Nombre,Apellido,Edad, Domicilio){
 
       let objeto= {
-        Nombre = Nombre,
-        Apellido = Apellido,
-        Edad = Edad,
-        Domicilio = Domicilio
+        Nombre : Nombre,
+        Apellido : Apellido,
+        Edad : Edad,
+        Domicilio : Domicilio
 
       }
 
