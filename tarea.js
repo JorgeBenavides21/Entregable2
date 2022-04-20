@@ -136,8 +136,6 @@ function tienenMismaLongitud(str1, str2) {
     // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
     // Devuelve el objeto
     // Tu código:
-    //pendiente
-
 
     const user = {
 
@@ -215,6 +213,14 @@ function tienenMismaLongitud(str1, str2) {
     // };
 
 
+    const suma = usuario.posts.map(post => post.likes).reduce((acumulador, valoractual) => {
+
+      let likes = acumulador + valoractual
+      return likes
+    });
+
+    return suma
+
   }
 
   // ---------------------------------------------------------------------------//
@@ -230,10 +236,26 @@ function tienenMismaLongitud(str1, str2) {
     //  }
 
 class Persona {
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
-      // Crea el constructor:
-
+    constructor(Nombre, Apellido, Edad, Domicilio) {
+      
+      this.Nombre = Nombre;
+      this.Apellido = Apellido;
+      this.Edad = Edad;
+      this.Domicilio = Domicilio;
   
+    }
+
+    Detalle (Nombre,Apellido,Edad, Domicilio){
+
+      let objeto= {
+        Nombre = Nombre,
+        Apellido = Apellido,
+        Edad = Edad,
+        Domicilio = Domicilio
+
+      }
+
+      return objeto
     }
 }
 
@@ -242,6 +264,10 @@ const crearInstanciaPersona = (nombre, apellido, edad, dir)=>{
     //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
     //Devolver la nueva persona creada
     
+
+    const persona = new Persona("Juan", "Perez", 22, "Saavedra 123");
+    return persona;
+
 }
 
 const sumarArray = (numeros, cb) =>{
@@ -249,7 +275,12 @@ const sumarArray = (numeros, cb) =>{
     // Pasa el resultado a `cb`
     // No es necesario devolver nada
 
+    const suma= numeros.reduce((acumulador, valoractual)=>{
 
+      return acumulador + valoractual
+    })
+
+    cb(suma)
 }
 
 const copiarEach = (array, cb) =>{
@@ -257,6 +288,11 @@ const copiarEach = (array, cb) =>{
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
 
+   
+    for(let i=0; i < array.length; i++){
+
+      cb(array[i]);
+    }
   
   }
 
@@ -265,7 +301,7 @@ const copiarEach = (array, cb) =>{
     //Devolver la función pasándole como argumentos los números recibidos.
     //Tu código: 
 
-   
+   return cb(n1,n2)
 
   }
 
