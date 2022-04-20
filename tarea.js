@@ -21,7 +21,10 @@ function tienenMismaLongitud(str1, str2) {
     // De lo contrario, devuelve "false"
     // Tu código:
 
-      return (str1.lenght == str2.lenght)
+    const texto1= str1.length;
+    const texto2=str2.length;
+
+    return(texto1===texto2)
         
 
   }
@@ -90,24 +93,23 @@ function tienenMismaLongitud(str1, str2) {
     // Si "numero" es divisible entre 5, devuelve "buzz"
     // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
     // De lo contrario, devuelve el numero
-    
-    if(numero % 3 === 0){
+  
+    if(numero % 3 == 0 && numero % 5 == 0){
 
-      return("fizz")
-    } 
-
-    else if(numero % 5 === 0 ){
-      return("buzz")
+      return "fizzbuzz"
     }
+    else if (numero % 3 == 0){
+      
+      return "fizz"
 
-    else if(numero % 3 === 0 && numero % 5 === 0 ){
-       return("fizzBuzz")
+    } else if (numero % 5 == 0){
+
+      return "buzz"
     }
-
     else{
       return numero
     }
-
+  
 
   }
 
@@ -115,19 +117,18 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve el primer elemento de un array
     // Tu código:
    
-    let primer = array[0];
-    return primer
-
+    return(array[0])
 
   }
 
   const agregarItemAlFinalDelArray = (array, elemento) =>{
+
     // Añade el "elemento" al final del array
     // y devuelve el array
     // Tu código:
 
-    let agregar= array.push(elemento);
-    return agregar
+    array.push(elemento);
+    return array
 
   }
 
@@ -135,14 +136,18 @@ function tienenMismaLongitud(str1, str2) {
     // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
     // Devuelve el objeto
     // Tu código:
+    //pendiente
 
-    const usuario={
-      name: nombre,
-      correo: email,
-      constraseña: password, 
+
+    const user = {
+
+      nombre: nombre,
+      email: email,
+      password: password, 
+
     }
 
-    return usuario
+    return user
   }
 
   const verificarPassword = (usuario, password) => {
@@ -151,15 +156,7 @@ function tienenMismaLongitud(str1, str2) {
     // De lo contrario, devuelve "false"
     // // Tu código:
 
-    if(password === usuario.constraseña){
-
-      return true
-    } 
-    else {
-      return false
-    }
-
-
+    return (password === usuario.password)
   }
 
   const actualizarPassword =(usuario, nuevaPassword) => {
@@ -167,7 +164,8 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve el objeto
     // Tu código:
 
-    usuario.constraseña = nuevaPassword
+
+    usuario.password = nuevaPassword
     return usuario
     
   }
@@ -181,8 +179,7 @@ function tienenMismaLongitud(str1, str2) {
     //   amigos: ['Pedro', 'Sebastian']
     // }
 
-    usuario[nuevapropiedad] = amigos;
-    amigos.push(nuevoAmigo);
+    usuario.amigos.push(nuevoAmigo);
     return usuario;
     
 
@@ -196,8 +193,10 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve el array de usuarios
     // Tu código:
     
+    for (var i = 0; i < usuarios.length; i++) {
+      usuarios[i].esPremium = true
+     }
 
-    usuarios.usuario.esPremium = true
     return usuarios
   
   }
@@ -214,6 +213,7 @@ function tienenMismaLongitud(str1, str2) {
     //     likes: 4
     //   }]
     // };
+
 
   }
 
@@ -233,6 +233,7 @@ class Persona {
     constructor(/*Escribir los argumentos que recibe el constructor*/) {
       // Crea el constructor:
 
+  
     }
 }
 
@@ -247,13 +248,16 @@ const sumarArray = (numeros, cb) =>{
     // Suma todos los números enteros (int/integers) de un array ("numeros")
     // Pasa el resultado a `cb`
     // No es necesario devolver nada
+
+
 }
 
 const copiarEach = (array, cb) =>{
     // Itera sobre la matriz "array" y pasa los valores a cb uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
-    
+
+  
   }
 
   const operacionMatematica =(n1, n2, cb) =>{
@@ -261,6 +265,7 @@ const copiarEach = (array, cb) =>{
     //Devolver la función pasándole como argumentos los números recibidos.
     //Tu código: 
 
+   
 
   }
 
@@ -269,8 +274,8 @@ const copiarEach = (array, cb) =>{
     //Devolver un nuevo array con los elementos que cumplen la condición
     //Tu código:
 
-    const filtro = array.filter ((a)=> a === array.startsWith(a))
-    return filtro
+    const nuevo = array.filter ((a)=> a.charAt(0)==="a")
+    return nuevo
 
   } 
 
